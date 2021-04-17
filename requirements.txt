@@ -4,7 +4,7 @@ async-generator==1.10
 attrs==20.3.0
 backcall==0.2.0
 bleach==3.3.0
-bokeh==2.3.1
+bokeh==2.2.3
 cffi==1.14.5
 decorator==5.0.6
 defusedxml==0.7.1
