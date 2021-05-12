@@ -297,10 +297,10 @@ class EventTool(object):
         anno = class_value*1e6
 
         if not feature_value  == 'none':
-            anno += int(feature_value)*10e3
+            anno += int(feature_value)
 
         if not instance_value == 'none':
-            anno += int(instance_value)
+            anno += int(instance_value)*10e3
 
         return anno
 
