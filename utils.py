@@ -484,7 +484,7 @@ class Stream(object):
                     if c == -1:
                         col = [0,0,0]
                     else:
-                        clas, feature, instance = EventTool.convert_anno_to_class(c)
+                        clas, instance, feature = EventTool.convert_anno_to_class(c)
                         
                         if cmap == 'class':
                             col = colors[clas]
@@ -508,8 +508,14 @@ class Stream(object):
                     if c == -1:
                         col = [0,0,0]
                     else:
-                        clas, feature, instance = EventTool.convert_anno_to_class(c)
-                        col = colors[clas]
+                        clas, instance, feature = EventTool.convert_anno_to_class(c)
+
+                        if cmap == 'class':
+                            col = colors[clas]
+                        elif cmap == 'feature':
+                            col = colors[feature]
+                        elif cmap == 'instance':
+                            col = colors[instance]
                         
                     df_filtered = self.df_filtered[self.df_filtered['anno']==c]
                     img[(df_filtered['y'],df_filtered['x'])] = IntfromRGBA([*col, 255])
